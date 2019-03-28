@@ -12,3 +12,4 @@ BuildingEspace/Content/StarterContent/
 # VS Generated Files #
 ######################
 *.VC.db
+BuildingEspace/.vs/BuildingEspace/v15/ipch/
