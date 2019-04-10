@@ -8,6 +8,7 @@
 #include "DrawDebugHelpers.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "Components/ActorComponent.h"
+#include "Components/InputComponent.h"
 #include "Grabber.generated.h"
 
 
@@ -34,5 +35,21 @@ private:
 	float Reach = 100.f;
 
 	UPhysicsHandleComponent* PhysicsHandle = nullptr;
+
+	UInputComponent* InputComponent = nullptr;
+
+	// Ray-cast and grab whats's in reach
+	void Grab();
+
+	// Called when grab is released
+	void Release();
+
+	// Find attached physics
+	void FindPhysicHandleComponent();
 		
+	// Setup (assumed) attached input component
+	void SetupInputComponent();
+
+	// Return hit for first physics body in reach
+	FHitResult GetFirstPhysicsBodyInReach() const;
 };
