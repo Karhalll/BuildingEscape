@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Engine/World.h"
 #include "Components/ActorComponent.h"
 #include "Engine/TriggerVolume.h"
 #include "OpenDoor.generated.h"
@@ -40,6 +41,8 @@ private:
 
 	float LastDoorOpenTime;
 
-	AActor* ActorThatOpens;	
 	AActor* Owner;
+
+	// Returns total mas in kg
+	float GetTotalMassOfActorsOnPlate();
 };
